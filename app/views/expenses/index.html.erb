@@ -1,0 +1,42 @@
+<h1>Listing expenses</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Category</th>
+    <th>Cost</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% x=0 %>
+<% @expenses.each do |expense| %>
+  <tr>
+    <td><%= expense.name %></td>
+    <td><%= expense.description %></td>
+    <td><%= expense.category %></td>
+    <td><%= expense.cost %></td>
+    <td><%= expense.time %></td>
+    <td><%= link_to 'Show', expense %></td>
+    <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
+    <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  <%
+    if expense.category=='income'
+      x-=expense.cost
+    else 
+      x+=expense.cost
+    end
+  %>
+<% end %>
+</table>
+<div id='total'>Total: <%= x %></div>
+<br />
+
+<%= link_to 'New Expense', new_expense_path %>
+
+<script type='text/javascript'>
+  
+</script>

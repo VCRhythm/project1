@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%= @expense.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @expense.description %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @expense.category %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @expense.cost %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%= @expense.time %>
+</p>
+
+
+<%= link_to 'Edit', edit_expense_path(@expense) %> |
+<%= link_to 'Back', expenses_path %>

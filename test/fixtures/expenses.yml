@@ -2,6 +2,12 @@
 
 one:
   name: MyString
+  description: MyString
+  category: MyString
+  cost: 1.5
 
 two:
   name: MyString
+  description: MyString
+  category: MyString
+  cost: 1.5

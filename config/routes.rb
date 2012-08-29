@@ -1,7 +1,9 @@
 ControllerExercise::Application.routes.draw do
+  resources :expenses
 
-
- resources :products
+  match 'taxes/fv' => 'taxes#fv'
+  resources :taxes
+  resources :products
 
   resources :users
 
